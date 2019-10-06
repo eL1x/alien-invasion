@@ -12,20 +12,20 @@ class Settings():
         self.ship_limit = 3
 
         # Bullet settings 
-        self.bullet_width = 300
+        self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = (60, 60, 60)
         self.bullets_allowed = 3
 
         # Alien settings
-        self.fleet_drop_speed = 100
+        self.fleet_drop_speed = 10
         
         # How quickly the game speeds up
         self.speedup_scale = 1.1
         # How quickly the alien point values increase
         self.score_scale = 1.5
 
-        # File to score high score.
+        # File to score the highest score.
         self.high_score_file = "high_score.txt"
 
         self.initialize_dynamic_settings()
@@ -49,3 +49,7 @@ class Settings():
         self.alien_speed_factor *= self.speedup_scale
 
         self.alien_points = int(self.alien_points * self.score_scale)
+
+    def change_fleet_direction(self):
+        """Change the fleet's direction."""
+        self.fleet_direction *= -1
