@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class Alien(Sprite):
     """A class to represent a single alien in the fleet."""
 
@@ -31,8 +32,10 @@ class Alien(Sprite):
 
     def update(self):
         """Move the alien right or left."""
-        self.x += (self.ai_settings.alien_speed_factor * 
-                    self.ai_settings.fleet_direction)
+        self.x += (
+            self.ai_settings.alien_speed_factor *
+            self.ai_settings.fleet_direction
+        )
         self.rect.x = self.x
 
     def blitme(self):
